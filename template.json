@@ -3,20 +3,20 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "RepositoryName": {
-      "Description": "enter the name of your GitHub source repository",
+      "Description": "alexa-oauth-sample",
       "Type": "String"
     },
     "BranchName": {
-      "Description": "enter the repository branch",
+      "Description": "master",
       "Type": "String",
       "Default": "master"
     },
     "GitHubOwner": {
-      "Description": "enter the GitHub owner of the repository",
+      "Description": "priyamm",
       "Type": "String"
     },
     "GitHubOAuthToken": {
-      "Description": "enter the personal access key for your GitHub repository",
+      "Description": "882d33c1a9693e263b660d1f77b85595ea50d92a",
       "Type": "String",
       "NoEcho": true
     },
@@ -24,7 +24,7 @@
       "Type": "AWS::EC2::VPC::Id"
     },
     "ElasticBeanstalkPlatform": {
-      "Description": "enter the latest Java SE version in https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.javase",
+      "Description": "Java 8 version 2.9.2",
       "Type": "String",
       "Default": "64bit Amazon Linux 2018.03 v2.9.1 running Java 8"
     }
