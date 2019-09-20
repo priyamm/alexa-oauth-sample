@@ -5,7 +5,10 @@
  */
 package com.oauth.server.configuration;
 
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
@@ -22,8 +25,10 @@ public class DynamoDBConfiguration {
 
     @Bean
     public AmazonDynamoDB amazonDynamoDB() {
+        BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIASZUAEII42GXL2BWQ", "YOH3uzczqopcRtUF+XU48Ypm/efHPMKwzSEPfobH");
         return AmazonDynamoDBClientBuilder.standard()
-                   .withCredentials(DefaultAWSCredentialsProviderChain.getInstance())
+                .withRegion(Regions.US_EAST_2)
+                   .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
                    .build();
     }
 
